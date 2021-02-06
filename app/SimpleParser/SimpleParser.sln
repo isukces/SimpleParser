@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleParser", "SimpleParser\SimpleParser.csproj", "{125BED9F-A9C2-4119-89E4-910D7F151328}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleParser.Console", "SimpleParser.Console\SimpleParser.Console.csproj", "{4847869D-0164-4033-B362-F6245E3EB72E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleParser.Tests", "SimpleParser.Tests\SimpleParser.Tests.csproj", "{576E0617-9784-4CE6-9AB4-3AAE8F7C1DC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{125BED9F-A9C2-4119-89E4-910D7F151328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{125BED9F-A9C2-4119-89E4-910D7F151328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{125BED9F-A9C2-4119-89E4-910D7F151328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{125BED9F-A9C2-4119-89E4-910D7F151328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4847869D-0164-4033-B362-F6245E3EB72E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4847869D-0164-4033-B362-F6245E3EB72E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4847869D-0164-4033-B362-F6245E3EB72E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4847869D-0164-4033-B362-F6245E3EB72E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{576E0617-9784-4CE6-9AB4-3AAE8F7C1DC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{576E0617-9784-4CE6-9AB4-3AAE8F7C1DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{576E0617-9784-4CE6-9AB4-3AAE8F7C1DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{576E0617-9784-4CE6-9AB4-3AAE8F7C1DC4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
