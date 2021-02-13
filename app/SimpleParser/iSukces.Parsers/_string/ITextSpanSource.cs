@@ -1,4 +1,4 @@
-﻿namespace SimpleParser
+﻿namespace iSukces.Parsers
 {
     public interface ITextSpanSource
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace SimpleParser
+namespace iSukces.Parsers
 {
     public struct TextSpan
     {

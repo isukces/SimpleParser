@@ -1,4 +1,4 @@
-﻿using SimpleParser.TokenParsers;
+﻿using iSukces.Parsers.TokenParsers;
 
 namespace SimpleParser.Console
 {

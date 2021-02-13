@@ -1,4 +1,4 @@
-﻿namespace SimpleParser.TokenParsers
+﻿namespace iSukces.Parsers.TokenParsers
 {
     public class TokenCandidate
     {

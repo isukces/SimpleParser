@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace SimpleParser.TokenParsers
+namespace iSukces.Parsers.TokenParsers
 {
     public abstract class AbstractTokenizer
     {

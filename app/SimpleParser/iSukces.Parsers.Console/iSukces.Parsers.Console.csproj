@@ -3,10 +3,11 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>SimpleParser.Console</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\SimpleParser\SimpleParser.csproj" />
+      <ProjectReference Include="..\iSukces.Parsers\iSukces.Parsers.csproj" />
     </ItemGroup>
 
 </Project>

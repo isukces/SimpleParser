@@ -4,6 +4,8 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
 
         <IsPackable>false</IsPackable>
+
+        <RootNamespace>SimpleParser.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,7 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\SimpleParser\SimpleParser.csproj" />
+      <ProjectReference Include="..\iSukces.Parsers\iSukces.Parsers.csproj" />
     </ItemGroup>
 
 </Project>

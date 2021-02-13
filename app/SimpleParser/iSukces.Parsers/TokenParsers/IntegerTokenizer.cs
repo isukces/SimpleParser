@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace SimpleParser.TokenParsers
+namespace iSukces.Parsers.TokenParsers
 {
     public class IntegerTokenizer : AbstractRegexpTokenizer
     {

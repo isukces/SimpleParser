@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace SimpleParser.TokenParsers
+namespace iSukces.Parsers.TokenParsers
 {
     public abstract class AbstractRegexpTokenizer : ValueTokenizer
     {
