@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -41,7 +40,7 @@ namespace iSukces.Parsers.TokenParsers
         //private static readonly Regex DoubleRegex = new Regex(DoubleFilter, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         private readonly Regex _reg;
-        private char[] _separatorsToChange;
+        private readonly char[] _separatorsToChange;
 
         //private const string DoubleFilter = @"^\s*([+-]?\d+(?:(?:(?:\.\d+)(?:e[+-]?\d+)?)|(?:(?:e[+-]?\d+))))";
 

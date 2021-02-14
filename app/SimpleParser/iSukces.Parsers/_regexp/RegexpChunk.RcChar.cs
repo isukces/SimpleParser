@@ -81,7 +81,10 @@ namespace iSukces.Parsers
 
             public override int GetHashCode()
             {
-                return HashCode.Combine(_source, Quantifier);
+                unchecked
+                {
+                    return (_source?.GetHashCode() ?? 0 * 397) ^ Quantifier.GetHashCode();
+                }
             }
 
             public override RegexpChunk WithQuantifier(RegexpQuantifier quantifier)

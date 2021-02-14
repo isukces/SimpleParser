@@ -40,7 +40,10 @@ namespace iSukces.Parsers
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(_min, _max);
+            unchecked
+            {
+                return (_min * 397) ^ _max;
+            }
         }
 
         public override string ToString()
