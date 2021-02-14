@@ -1,4 +1,5 @@
-﻿using iSukces.Parsers.TokenParsers;
+﻿using iSukces.Parsers;
+using iSukces.Parsers.TokenParsers;
 
 namespace SimpleParser.Console
 {
@@ -8,7 +9,7 @@ namespace SimpleParser.Console
         {
             var candidates = new ValueTokenizer[]
             {
-                new DoubleTokenizer(),
+                new DoubleTokenizer(NumerFlags.AllowLedingSpaces, '.', ','),
                 new IntegerTokenizer(),
                 new StringNoSpaceTokenizer(),
                 new SingleQuoteStringTokenizer()

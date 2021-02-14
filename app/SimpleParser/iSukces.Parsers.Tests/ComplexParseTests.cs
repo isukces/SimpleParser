@@ -1,4 +1,5 @@
-﻿using iSukces.Parsers.TokenParsers;
+﻿using iSukces.Parsers;
+using iSukces.Parsers.TokenParsers;
 using Xunit;
 
 namespace SimpleParser.Tests
@@ -12,7 +13,7 @@ namespace SimpleParser.Tests
             Assert.Equal(3, q.NotParsedEnd.Length);
             var tokens = q.Tokens;
             Assert.Equal(2, tokens.Length);
-            Assert.Equal(123l, (long)tokens[0]);
+            Assert.Equal(123L, (long)tokens[0]);
             Assert.Equal(3.44, (double)tokens[1]);
         }
 
@@ -23,7 +24,7 @@ namespace SimpleParser.Tests
             {
                 var candidates = new ValueTokenizer[]
                 {
-                    new DoubleTokenizer(),
+                    new DoubleTokenizer(NumerFlags.AllowLedingSpaces),
                     new IntegerTokenizer(),
                     new StringNoSpaceTokenizer(),
                     new SingleQuoteStringTokenizer()
