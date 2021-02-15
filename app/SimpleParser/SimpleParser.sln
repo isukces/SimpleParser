@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iSukces.Parsers.Console", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iSukces.Parsers.Tests", "iSukces.Parsers.Tests\iSukces.Parsers.Tests.csproj", "{576E0617-9784-4CE6-9AB4-3AAE8F7C1DC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iSukces.Parsers.Benchmark", "iSukces.Parsers.Benchmark\iSukces.Parsers.Benchmark.csproj", "{07E47A35-F755-42F3-9DE6-F516DA7FECFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{576E0617-9784-4CE6-9AB4-3AAE8F7C1DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{576E0617-9784-4CE6-9AB4-3AAE8F7C1DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{576E0617-9784-4CE6-9AB4-3AAE8F7C1DC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07E47A35-F755-42F3-9DE6-F516DA7FECFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07E47A35-F755-42F3-9DE6-F516DA7FECFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07E47A35-F755-42F3-9DE6-F516DA7FECFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07E47A35-F755-42F3-9DE6-F516DA7FECFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

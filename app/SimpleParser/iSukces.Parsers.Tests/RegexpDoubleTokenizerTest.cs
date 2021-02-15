@@ -23,7 +23,7 @@ namespace SimpleParser.Tests
         {
             var txt = prefix + "1 22 ww";
             _testOutputHelper.WriteLine("Parse '{0}'", txt);
-            var x = new DoubleTokenizer(NumerFlags.AllowLedingSpaces).Parse(txt);
+            var x = new RegexpDoubleTokenizer(NumerFlags.AllowLedingSpaces).Parse(txt);
             Assert.Null(x);
         }
 
@@ -38,7 +38,7 @@ namespace SimpleParser.Tests
         {
             var txt = prefix + "1.23 22 ww";
             _testOutputHelper.WriteLine("Parse '{0}'", txt);
-            var x = new DoubleTokenizer(NumerFlags.AllowLedingSpaces).Parse(txt);
+            var x = new RegexpDoubleTokenizer(NumerFlags.AllowLedingSpaces).Parse(txt);
             Assert.NotNull(x);
             var expected = prefix.Contains('-') ? -1.23 : 1.23;
             Assert.Equal(expected, (double)x.Token);
@@ -55,7 +55,7 @@ namespace SimpleParser.Tests
         {
             var txt = prefix + "12e3 22 ww";
             _testOutputHelper.WriteLine("Parse '{0}'", txt);
-            var x = new DoubleTokenizer(NumerFlags.AllowLedingSpaces).Parse(txt);
+            var x = new RegexpDoubleTokenizer(NumerFlags.AllowLedingSpaces).Parse(txt);
             Assert.NotNull(x);
             var expected = prefix.Contains('-') ? -12e3 : 12e3;
             Assert.Equal(expected, (double)x.Token);
@@ -72,7 +72,7 @@ namespace SimpleParser.Tests
         {
             var txt = prefix + "1.23e3 22 ww";
             _testOutputHelper.WriteLine("Parse '{0}'", txt);
-            var x = new DoubleTokenizer(NumerFlags.AllowLedingSpaces).Parse(txt);
+            var x = new RegexpDoubleTokenizer(NumerFlags.AllowLedingSpaces).Parse(txt);
             Assert.NotNull(x);
             var expected = prefix.Contains('-') ? -1.23e3 : 1.23e3;
             Assert.Equal(expected, (double)x.Token);
@@ -90,7 +90,7 @@ namespace SimpleParser.Tests
         {
             var txt = prefix + "1,23e3 22 ww";
             _testOutputHelper.WriteLine("Parse '{0}'", txt);
-            var x = new DoubleTokenizer(NumerFlags.AllowLedingSpaces, ',', '.').Parse(txt);
+            var x = new RegexpDoubleTokenizer(NumerFlags.AllowLedingSpaces, ',', '.').Parse(txt);
             Assert.NotNull(x);
             var expected = prefix.Contains('-') ? -1.23e3 : 1.23e3;
             Assert.Equal(expected, (double)x.Token);

@@ -24,7 +24,7 @@ namespace SimpleParser.Tests
             {
                 var candidates = new ValueTokenizer[]
                 {
-                    new DoubleTokenizer(NumerFlags.AllowLedingSpaces),
+                    new RegexpDoubleTokenizer(NumerFlags.AllowLedingSpaces),
                     new IntegerTokenizer(),
                     new StringNoSpaceTokenizer(),
                     new SingleQuoteStringTokenizer()
