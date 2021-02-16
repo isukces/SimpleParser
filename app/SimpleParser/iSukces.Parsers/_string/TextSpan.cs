@@ -4,11 +4,9 @@ namespace iSukces.Parsers
 {
     public struct TextSpan
     {
-        public TextSpan(ITextSpanSource s, int start, int len)
+        public TextSpan(ITextSpanSource textSpanSource, int start, int len)
         {
-            if (s == null)
-                throw new ArgumentNullException(nameof(s));
-            Source = s;
+            Source = textSpanSource ?? throw new ArgumentNullException(nameof(textSpanSource));
             Start  = start;
             Length = len;
         }
@@ -61,7 +59,8 @@ namespace iSukces.Parsers
             return Source.Text.Substring(Start, Length);
         }
 
-        public static TextSpan Empty => new TextSpan(null, 0, 0);
+        public static TextSpan Empty => new TextSpan(StringTextSpanSource.Empty, 0, 0);
+
 
         public int Length { get; }
 

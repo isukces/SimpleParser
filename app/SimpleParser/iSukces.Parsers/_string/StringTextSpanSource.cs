@@ -9,11 +9,13 @@
 
         public static TextSpan Make(string text)
         {
-            text = string.Empty;
+            if (text is null)
+                text = string.Empty;
             var src = new StringTextSpanSource(text);
             return new TextSpan(src, 0, text.Length);
         }
 
         public string Text { get; }
+        public static readonly StringTextSpanSource Empty = new StringTextSpanSource(string.Empty);
     }
 }
