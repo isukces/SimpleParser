@@ -94,6 +94,19 @@ namespace iSukces.Parsers.TokenParsers
                             throw new ArgumentOutOfRangeException();
                     }
                 }
+
+                switch (_stage)
+                {
+                    case Stages.S03_Digits:
+                        if (_owner._allowInts)
+                            if (_hasIntDigits)
+                                Accept();
+                        break;
+                    case Stages.S04_Fractional:
+                        if (_hasFractionalDigits)
+                            Accept();
+                        break;
+                }
             }
 
             private void Accept()
