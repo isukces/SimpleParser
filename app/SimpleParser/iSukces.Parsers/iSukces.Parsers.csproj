@@ -13,9 +13,9 @@
     <PackageTags>C#, parser</PackageTags>
     <IncludeSource>false</IncludeSource>
     <IncludeSymbols>true</IncludeSymbols>
-    <AssemblyVersion>1.0.21047.3</AssemblyVersion>
-    <Version>1.0.21047.3</Version>
-    <FileVersion>1.0.21047.3</FileVersion>
+    <AssemblyVersion>1.0.21054.4</AssemblyVersion>
+    <Version>1.0.21054.4</Version>
+    <FileVersion>1.0.21054.4</FileVersion>
     <PackageLicenseUrl>https://github.com/isukces/SimpleParser/blob/main/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 </Project>
