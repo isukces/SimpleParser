@@ -8,6 +8,8 @@ namespace iSukces.Parsers
         None,
         AllowLedingSpaces = 1,
         RequireAtLeastOneLeadingSpace = 2,
-        AllowUndescores = 4
+        AllowUndescores = 4,
+        
+        AllowParseInteger = 8
     }
 }

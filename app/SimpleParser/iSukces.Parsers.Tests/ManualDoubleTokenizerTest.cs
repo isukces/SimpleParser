@@ -96,6 +96,57 @@ namespace SimpleParser.Tests
             Assert.Equal(expected, (double)x.Token);
         }
 
+        [InlineData("1.33")]
+        [InlineData("1.3300")]
+        [InlineData("01.3300")]
+        [InlineData("+01.3300")]
+        [InlineData("+1.3300")]
+        [Theory]
+        public void T06_Sould_parse_just_number(string text)
+        {
+            var t = new ManualDoubleTokenizer(NumerFlags.None, '.');
+            {
+                var candidate = t.Parse(text);
+                Assert.NotNull(candidate);
+                Assert.Equal(1.33, (double)candidate.Token);
+            }
+            {
+                var candidate = t.Parse(text + "   ");
+                Assert.NotNull(candidate);
+                Assert.Equal(1.33, (double)candidate.Token);
+            }
+        }
+
+        [InlineData("1")]
+        [InlineData("01")]
+        [InlineData("+01")]
+        [InlineData("+1")]
+        [InlineData("-01")]
+        [InlineData("-1")]
+        [Theory]
+        public void T07_Sould_parse_int_as_number(string text)
+        {
+            var expected = text.Trim().StartsWith("-") ? -1d : 1d;
+            {
+                var t = new ManualDoubleTokenizer(NumerFlags.AllowParseInteger, '.');
+                {
+                    var candidate = t.Parse(text);
+                    Assert.NotNull(candidate);
+                    Assert.Equal(expected, (double)candidate.Token);
+                }
+                {
+                    var candidate = t.Parse(text + "   ");
+                    Assert.NotNull(candidate);
+                    Assert.Equal(expected, (double)candidate.Token);
+                }
+            }
+            {
+                var t         = new ManualDoubleTokenizer(NumerFlags.None, '.');
+                var candidate = t.Parse(text);
+                Assert.Null(candidate);
+            }
+        }
+
         private readonly ITestOutputHelper _testOutputHelper;
     }
 }

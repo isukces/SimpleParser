@@ -7,20 +7,22 @@ namespace iSukces.Parsers.TokenParsers
 {
     public class ManualDoubleTokenizer : ValueTokenizer
     {
-        public ManualDoubleTokenizer(NumerFlags leadingSpaces, params char[] decimalSeparators)
+        public ManualDoubleTokenizer(NumerFlags flags, params char[] decimalSeparators)
         {
             _decimalSeparators  = string.Join("", decimalSeparators);
             _separatorsToChange = decimalSeparators.Where(a => a != '.').ToArray();
 
-            _leadingSpaceAction = (leadingSpaces & NumerFlags.RequireAtLeastOneLeadingSpace) != 0
+            _leadingSpaceAction = (flags & NumerFlags.RequireAtLeastOneLeadingSpace) != 0
                 ? SpaceActions.MustHave
-                : (leadingSpaces & NumerFlags.AllowLedingSpaces) != 0
+                : (flags & NumerFlags.AllowLedingSpaces) != 0
                     ? SpaceActions.Ignore
                     : SpaceActions.Forbidden;
+
+            _allowInts = (flags & NumerFlags.AllowParseInteger) != 0;
         }
 
-        public ManualDoubleTokenizer(NumerFlags leadingSpaces)
-            : this(leadingSpaces, '.')
+        public ManualDoubleTokenizer(NumerFlags flags)
+            : this(flags, '.')
         {
         }
 
@@ -35,6 +37,7 @@ namespace iSukces.Parsers.TokenParsers
         private readonly char[] _separatorsToChange;
         private readonly string _decimalSeparators;
         private readonly SpaceActions _leadingSpaceAction;
+        private readonly bool _allowInts;
 
         private enum SpaceActions
         {
@@ -63,6 +66,9 @@ namespace iSukces.Parsers.TokenParsers
 
             public void Parse()
             {
+                _stage = _owner._leadingSpaceAction == SpaceActions.Forbidden
+                    ? Stages.S02_PlusMinus
+                    : Stages.S01_SkipLeadingSpaces;
                 for (_index = 0; _index < _text.Length; _index++)
                 {
                     _char = _text[_index];
@@ -116,7 +122,7 @@ namespace iSukces.Parsers.TokenParsers
                 var length = _index - _resultStart;
                 if (length < 0)
                     return;
-                var q     = _text.Substring(_resultStart, length);
+                var q = _text.Substring(_resultStart, length);
                 if (_actualDecimalSeparator != (char)0 && _actualDecimalSeparator != '.')
                     q = q.Replace(_actualDecimalSeparator, '.');
                 var value = double.Parse(q, NumberStyles.Any, CultureInfo.InvariantCulture);
@@ -141,6 +147,12 @@ namespace iSukces.Parsers.TokenParsers
             {
                 if (_char != '+' && _char != '-')
                     _index--;
+                else
+                {
+                    if (_resultStart < 0)
+                        _resultStart = _index;
+                }
+
                 _stage = Stages.S03_Digits;
             }
 
@@ -148,6 +160,8 @@ namespace iSukces.Parsers.TokenParsers
             {
                 if (_char >= '0' && _char <= '9')
                 {
+                    if (_resultStart < 0)
+                        _resultStart = _index;
                     _hasIntDigits = true;
                     return false;
                 }
@@ -167,7 +181,8 @@ namespace iSukces.Parsers.TokenParsers
                     return false;
                 }
 
-                // Accept(); <- uncomment if you want to accept integers
+                if (_owner._allowInts)
+                    Accept();
                 return true;
             }
 
@@ -217,7 +232,7 @@ namespace iSukces.Parsers.TokenParsers
 
             private char _char;
             private int _index;
-            private Stages _stage = Stages.S01_SkipLeadingSpaces;
+            private Stages _stage;
             private int _resultStart = -1;
 
 
