@@ -125,8 +125,15 @@ namespace iSukces.Parsers.TokenParsers
                 var q = _text.Substring(_resultStart, length);
                 if (_actualDecimalSeparator != (char)0 && _actualDecimalSeparator != '.')
                     q = q.Replace(_actualDecimalSeparator, '.');
-                var value = double.Parse(q, NumberStyles.Any, CultureInfo.InvariantCulture);
-                Result = new TokenCandidate(value, _index, 100);
+                try
+                {
+                    var value = double.Parse(q, NumberStyles.Any, CultureInfo.InvariantCulture);
+                    Result = new TokenCandidate(value, _index, 100);
+                }
+                catch (System.OverflowException)
+                {
+                    Result = null;
+                }
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

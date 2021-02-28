@@ -147,6 +147,21 @@ namespace SimpleParser.Tests
             }
         }
 
+        [Fact]
+        public void T08_Sould_not_parse_extreme_numbers()
+        {
+
+            var t = new ManualDoubleTokenizer(NumerFlags.AllowParseInteger, '.');
+
+            var candidate = t.Parse("1.23");
+            Assert.NotNull(candidate);
+            Assert.Equal(1.23, (double)candidate.Token);
+            
+            candidate = t.Parse("1.23e9999999");
+            Assert.Null(candidate);
+            
+        }
+        
         private readonly ITestOutputHelper _testOutputHelper;
     }
 }
