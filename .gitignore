@@ -400,3 +400,4 @@ app/Pd.Charts/obj
 documents/uml/ViewModels, Datapoint measure, Ui.puml
 documents/PE_templates/
 app/SimpleParser/projects-versions.json
+app/SimpleParser/Directory.Build.props
