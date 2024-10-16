@@ -4,7 +4,7 @@ using iSukces.Parsers.TokenParsers;
 
 namespace iSukces.Parsers.Benchmark
 {
-    [SimpleJob(RunStrategy.ColdStart, targetCount: 20, invocationCount: 1000_000)]
+    [SimpleJob(RunStrategy.ColdStart, invocationCount: 1000_000)]
     public class TokenizerBenchmark
     {
         [Benchmark(Description = "Number Regexp")]

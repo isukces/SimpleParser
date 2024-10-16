@@ -1,21 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net47;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net47;netcoreapp3.1;net8.0</TargetFrameworks>
     <Company>Internet Sukces Piotr Stęclik</Company>
     <NeutralLanguage>en</NeutralLanguage>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Title>iSukces.Parsers</Title>
     <Description>Simple text to token parser</Description>
-    <Copyright>Copyright © Internet Sukces Piotr Stęclik 2021-2022</Copyright>
+    <Copyright>Copyright © Internet Sukces Piotr Stęclik 2021-2024</Copyright>
     <PackageProjectUrl>https://github.com/isukces/SimpleParser</PackageProjectUrl>
     <RepositoryUrl>https://github.com/isukces/SimpleParser</RepositoryUrl>
     <PackageTags>C#, parser</PackageTags>
     <IncludeSource>false</IncludeSource>
     <IncludeSymbols>true</IncludeSymbols>
-    <AssemblyVersion>1.0.22348.7</AssemblyVersion>
-    <Version>1.0.22348.7</Version>
-    <FileVersion>1.0.22348.7</FileVersion>
+    <AssemblyVersion>1.24.1016.8</AssemblyVersion>
+    <Version>1.24.1016.8</Version>
+    <FileVersion>1.24.1016.8</FileVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 </Project>
