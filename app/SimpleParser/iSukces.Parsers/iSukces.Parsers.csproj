@@ -1,23 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net47;netcoreapp3.1;net8.0</TargetFrameworks>
+    <Copyright>Copyright © Internet Sukces Piotr Stęclik 2021-2025</Copyright>
+    <Authors>Internet Sukces Piotr Stęclik</Authors>
     <Company>Internet Sukces Piotr Stęclik</Company>
-    <NeutralLanguage>en</NeutralLanguage>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Title>iSukces.Parsers</Title>
+    <ProjectGuid>{1062B790-2D64-4CCD-9416-F9C6E6FA1C15}</ProjectGuid>
+    <TargetFrameworks>net47;netcoreapp3.1;net8.0</TargetFrameworks>
+    <AssemblyVersion>1.24.1016.8</AssemblyVersion>
+    <FileVersion>1.24.1016.8</FileVersion>
+    <Version>1.24.1016.8</Version>
     <Description>Simple text to token parser</Description>
-    <Copyright>Copyright © Internet Sukces Piotr Stęclik 2021-2024</Copyright>
-    <PackageProjectUrl>https://github.com/isukces/SimpleParser</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/isukces/SimpleParser</RepositoryUrl>
+    <NeutralLanguage>en</NeutralLanguage>
     <PackageTags>C#, parser</PackageTags>
+    <Title>iSukces.Parsers</Title>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSource>false</IncludeSource>
     <IncludeSymbols>true</IncludeSymbols>
-    <AssemblyVersion>1.24.1016.8</AssemblyVersion>
-    <Version>1.24.1016.8</Version>
-    <FileVersion>1.24.1016.8</FileVersion>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageProjectUrl>https://github.com/isukces/SimpleParser</PackageProjectUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryUrl>https://github.com/isukces/SimpleParser</RepositoryUrl>
   </PropertyGroup>
 </Project>

@@ -1,13 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>net8.0</TargetFramework>
-        <RootNamespace>SimpleParser.Console</RootNamespace>
-    </PropertyGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\iSukces.Parsers\iSukces.Parsers.csproj" />
-    </ItemGroup>
-
+  <PropertyGroup>
+    <Copyright>Copyright © Internet Sukces Piotr Stęclik 2025</Copyright>
+    <Authors>Internet Sukces Piotr Stęclik</Authors>
+    <Company>Internet Sukces Piotr Stęclik</Company>
+    <ProjectGuid>{DF7E83F6-86A9-453A-8FA0-0FFF8C1C75FE}</ProjectGuid>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>SimpleParser.Console</RootNamespace>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iSukces.Parsers\iSukces.Parsers.csproj" />
+  </ItemGroup>
 </Project>

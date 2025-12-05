@@ -1,14 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <Copyright>Copyright © Internet Sukces Piotr Stęclik 2025</Copyright>
+    <Authors>Internet Sukces Piotr Stęclik</Authors>
+    <Company>Internet Sukces Piotr Stęclik</Company>
+    <ProjectGuid>{B60CC522-8D34-41BE-A7B8-7038170D7AF8}</ProjectGuid>
     <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.14.0" />
-    <PackageReference Include="BenchmarkDotNet.Annotations" Version="0.14.0" />
+    <ProjectReference Include="..\iSukces.Parsers\iSukces.Parsers.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\iSukces.Parsers\iSukces.Parsers.csproj" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.15.8" />
+    <PackageReference Include="BenchmarkDotNet.Annotations" Version="0.15.8" />
   </ItemGroup>
 </Project>
