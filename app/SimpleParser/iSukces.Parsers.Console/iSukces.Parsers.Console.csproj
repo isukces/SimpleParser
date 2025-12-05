@@ -5,8 +5,9 @@
     <Authors>Internet Sukces Piotr Stęclik</Authors>
     <Company>Internet Sukces Piotr Stęclik</Company>
     <ProjectGuid>{DF7E83F6-86A9-453A-8FA0-0FFF8C1C75FE}</ProjectGuid>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>SimpleParser.Console</RootNamespace>
+    <LangVersion>14</LangVersion>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>

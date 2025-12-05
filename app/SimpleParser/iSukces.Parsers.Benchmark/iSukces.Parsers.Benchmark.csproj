@@ -5,7 +5,8 @@
     <Authors>Internet Sukces Piotr Stęclik</Authors>
     <Company>Internet Sukces Piotr Stęclik</Company>
     <ProjectGuid>{B60CC522-8D34-41BE-A7B8-7038170D7AF8}</ProjectGuid>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>14</LangVersion>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
