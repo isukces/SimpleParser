@@ -1,7 +1,7 @@
 // using System.IO;
 var builder = new ProjectBuilder
 {
-	VisualStudioExe = GlobalVar["MsBuild 2019"],
+	VisualStudioExe = GlobalVar["MsBuild 18"],
 	Nuget = {
 		Exe = GlobalVar["Nuget"],
 		RepositoryDir = GlobalVar["Private Nuget Repository"],
@@ -16,20 +16,23 @@ builder.DeleteBinObj();
 
 
 // task: Nuget restore
-builder.Nuget.Restore();
+Execute("dotnet", "restore", builder.SolutionFileName.FullName);  
 
-
-// task: Update version
-var version = builder.UpdateCoreProjectVersion();
 
 // task: Build
 builder.MsBuild();
 
 
-// task: Copy nuget
-var srcNupkg = builder.GetNupkgFile(version, true).FullName;
-var nugetOut = CombinePath(builder.Nuget.RepositoryDir, builder.Nuget.GetNupkgFileName(version, false));
-Console.WriteLine("Copy {0} to {1}", srcNupkg, nugetOut);
-File.Copy(srcNupkg, nugetOut, true);
+var version = builder.UpdateVersionCore(VersionNumberStyles.DoNotChange);  
+foreach (var options in new[] { PackageNameOptions.Normal, PackageNameOptions.SNupkg })  
+{  
+    var srcNupkg      = builder.Nuget.GetNugetPackageShortFile(version, options);  
+    var nugetCopyFrom = CombinePath(builder.Nuget.CompiledNugetOutputDir, srcNupkg);  
+    var nugetCopyTo   = CombinePath(builder.Nuget.RepositoryDir, srcNupkg);  
+    Console.WriteLine("Copy {0} to {1}", srcNupkg, nugetCopyTo);  
+    File.Copy(nugetCopyFrom, nugetCopyTo, true);  
+}  
+
+    
 
 Console.WriteLine("--FINISHED--");
